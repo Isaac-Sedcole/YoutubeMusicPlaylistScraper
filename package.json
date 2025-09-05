@@ -1,0 +1,21 @@
+{
+  "name": "youtube-scraper",
+  "version": "1.0.0",
+  "description": "A web scraper that collects incomplete songs from YouTube channels and compiles them into a playlist.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "puppeteer": "^20.0.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "youtube",
+    "scraper",
+    "playlist",
+    "puppeteer"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
