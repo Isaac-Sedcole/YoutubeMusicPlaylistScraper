@@ -6,9 +6,10 @@ const Scraper = require('./scraper');
     const scraper = new Scraper(browser);
 
     const channels = [
-        'https://www.youtube.com/c/Channel1/videos',
-        'https://www.youtube.com/c/Channel2/videos',
-        'https://www.youtube.com/c/Channel3/videos'
+        'https://www.youtube.com/@MrSuicideSheep/videos',
+        'https://www.youtube.com/@whoisvaliant/videos',
+        'https://www.youtube.com/@GalaxyMusic/videos',
+        'https://www.youtube.com/@xKitoMusic/videos'
     ];
 
     let allIncompleteVideos = [];
