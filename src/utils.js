@@ -1,4 +1,4 @@
-export function waitForElement(selector, timeout = 30000) {
+function waitForElement(selector, timeout = 30000) {
     return new Promise((resolve, reject) => {
         const startTime = Date.now();
         const interval = setInterval(() => {
@@ -14,12 +14,18 @@ export function waitForElement(selector, timeout = 30000) {
     });
 }
 
-export function isVideoComplete(videoElement) {
+function isVideoComplete(videoElement) {
     // YouTube shows a red bar as a div with style width > 0% in the thumbnail overlay
     const progressBar = videoElement.querySelector('ytd-thumbnail-overlay-resume-playback-renderer');
     return !!progressBar;
 }
 
-export function formatPlaylistLink(playlistId) {
+function formatPlaylistLink(playlistId) {
     return `https://www.youtube.com/playlist?list=${playlistId}`;
 }
+
+module.exports = {
+    waitForElement,
+    isVideoComplete,
+    formatPlaylistLink
+};
