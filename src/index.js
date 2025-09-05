@@ -1,8 +1,14 @@
+// NOTE: For Windows users, run this script from PowerShell or CMD, NOT from WSL.
+// The executablePath must be a Windows path, e.g. 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
 const puppeteer = require('puppeteer');
 const Scraper = require('./scraper');
 
 (async () => {
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch({
+        headless: false,
+        executablePath: 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
     const scraper = new Scraper(browser);
 
     const channels = [

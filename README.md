@@ -1,56 +1,29 @@
-# YouTube Scraper
+# Youtube Music Playlist Scraper
 
-This project is a web scraper designed to navigate YouTube channels, check video completion status, and compile a playlist of incomplete songs.
+A Node.js-powered web scraper that uses Puppeteer to automate Chrome, navigate to selected YouTube channels, and collect all unwatched videos (without the red progress bar). The tool simulates creating a playlist of these videos and opens the playlist link for easy access. Perfect for curating music or video playlists from your favorite channels!
 
-## Project Structure
+## Requirements
+- Node.js v16+ (LTS recommended)
+- Google Chrome installed (default path: `C:\Program Files (x86)\Google\Chrome\Application\chrome.exe`)
+- Windows PowerShell or CMD (do NOT use WSL to run this script)
 
-```
-youtube-scraper
-├── src
-│   ├── index.js          # Entry point of the application
-│   ├── scraper.js        # Contains the Scraper class for scraping logic
-│   └── utils.js          # Utility functions for the scraper
-├── package.json          # npm configuration file
-├── .gitignore            # Specifies files to ignore in Git
-└── README.md             # Project documentation
-```
-
-## Installation
-
-1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/youtube-scraper.git
-   ```
-
-2. Navigate to the project directory:
-   ```
-   cd youtube-scraper
-   ```
-
-3. Install the dependencies:
+## Setup
+1. Clone this repository and navigate to the project folder.
+2. Install dependencies:
    ```
    npm install
    ```
+3. Edit `src/index.js` if your Chrome path is different.
 
 ## Usage
+Run the script from PowerShell or CMD (not WSL):
+```
+node src/index.js
+```
 
-1. Open the `src/index.js` file and configure the YouTube channels you want to scrape.
+- The script will open Chrome, visit each channel, collect unwatched videos, and open a simulated playlist link.
+- Do not run this script from WSL, as Puppeteer cannot reliably launch Chrome from WSL.
 
-2. Run the scraper:
-   ```
-   node src/index.js
-   ```
-
-3. Once the scraping is complete, a link to the generated playlist will be displayed.
-
-## Dependencies
-
-- Puppeteer: A Node library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol.
-
-## Contributing
-
-Feel free to submit issues or pull requests for improvements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License.
+## Notes
+- This tool simulates playlist creation. For real playlist creation, you would need to use the YouTube Data API with OAuth.
+- If you encounter errors about Chrome not found, check your `executablePath` in `src/index.js`.
